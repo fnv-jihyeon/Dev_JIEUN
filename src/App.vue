@@ -1,7 +1,9 @@
 <script setup>
-import TodoApp from './example/TodoApp.vue';
+import TheHeader from './components/TheHeader.vue';
+import TheFooter from './components/TheFooter.vue';
 </script>
 
 <template>
-  <TodoApp />
+  <TheHeader />
+  <TheFooter />
 </template>
