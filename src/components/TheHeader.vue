@@ -6,7 +6,7 @@
     <nav class="header_nav">
       <ul>
         <li>
-          <router-link to="intro">TODO</router-link>
+          <router-link to="todo">TODO</router-link>
         </li>
         <li>
           <router-link to="">소개</router-link>

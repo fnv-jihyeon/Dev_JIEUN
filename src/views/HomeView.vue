@@ -1,3 +1,5 @@
-<script setup></script>
+<template>
+  <div class="home"></div>
+</template>
 
-<template><div></div></template>
+<script></script>
