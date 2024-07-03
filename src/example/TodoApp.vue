@@ -66,6 +66,10 @@ function removeCompleted() {
   todos.value = filters.active(todos.value);
 }
 
+function removeAll() {
+  todos.value = [];
+}
+
 /* URL 변경에 따라 업데이트 */
 function onHashChange() {
   const route = window.location.hash.replace(/#\/?/, '');
@@ -153,10 +157,32 @@ function onHashChange() {
       >
         Clear completed
       </button>
+      <button class="clear-all" @click="removeAll">Clear all</button>
     </footer>
   </section>
 </template>
 
 <style>
 @import 'https://unpkg.com/todomvc-app-css@2.4.1/index.css';
+
+.filters {
+  right: 100px;
+}
+
+.clear-all,
+html .clear-all:active {
+  float: right;
+  position: relative;
+  line-height: 19px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clear-all:hover {
+  text-decoration: underline;
+}
+
+.clear-completed {
+  margin-left: 10px;
+}
 </style>
