@@ -1,59 +1,64 @@
 <template>
   <header class="header_container">
-    <h1 class="header_title">
-      <router-link to="/"> Vue <span>site</span> </router-link>
-    </h1>
-    <nav class="header_nav">
-      <ul>
-        <li>
-          <router-link to="todo">Todo</router-link>
-        </li>
-        <li>
-          <router-link to="markdownEditor">Markdown Editor</router-link>
-        </li>
-        <li>
-          <router-link to="modal">Modal With Transitions</router-link>
-        </li>
-        <li>
-          <router-link to="graph">SVG Graph</router-link>
-        </li>
-        <li>
-          <router-link to="binding">Attribute Bindings</router-link>
-        </li>
-      </ul>
-    </nav>
+    <div class="header_layout">
+      <img src="@/assets/images/finevo_logo.png" />
+      <nav class="header_nav">
+        <span class="body4 header_nav_text">회사소개</span>
+        <span class="body4 header_nav_text">서비스</span>
+        <span class="body4 header_nav_text">서비스신청</span>
+        <span class="body4 header_nav_text">고객지원</span>
+        <span class="body4 header_nav_text">FINEVO IN</span>
+      </nav>
+      <img class="hamburger" src="@/assets/images/hamburger_icon.png" />
+    </div>
   </header>
 </template>
 
 <style lang="scss">
 .header_container {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 1rem 0 1.5rem;
-  gap: 1.5rem;
-  background: #ffececa2;
-}
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
 
-.header_title {
-  font-size: 30px;
-  font-weight: 800;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-  span {
-    font-weight: 500;
+  nav {
+    display: flex;
+    gap: 48px;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: none;
   }
 }
 
-.header_nav ul {
-  display: flex;
-  justify-content: space-evenly;
+@media (min-width: 0px) and (max-width: 767px) {
+  .header_container {
+    height: 54.37px;
+    padding: 10px 24px;
 
-  li {
-    display: inline-block;
+    nav {
+      display: none;
+    }
 
-    &:hover {
+    .hamburger {
+      display: flex;
       cursor: pointer;
     }
   }
 }
 </style>
+
+<script setup></script>

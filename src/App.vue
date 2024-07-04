@@ -17,7 +17,7 @@ import TheFooter from './components/TheFooter.vue';
 .app_container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .app_content {
