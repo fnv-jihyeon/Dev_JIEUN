@@ -6,19 +6,19 @@
     <nav class="header_nav">
       <ul>
         <li>
-          <router-link to="todo">TODO</router-link>
+          <router-link to="todo">Todo</router-link>
         </li>
         <li>
-          <router-link to="">소개</router-link>
+          <router-link to="markdownEditor">Markdown Editor</router-link>
         </li>
         <li>
-          <router-link to="">소개</router-link>
+          <router-link to="modal">Modal With Transitions</router-link>
         </li>
         <li>
-          <router-link to="">소개</router-link>
+          <router-link to="graph">SVG Graph</router-link>
         </li>
         <li>
-          <router-link to="">소개</router-link>
+          <router-link to="binding">Attribute Bindings</router-link>
         </li>
       </ul>
     </nav>
@@ -32,6 +32,7 @@
   text-align: center;
   padding: 1rem 0 1.5rem;
   gap: 1.5rem;
+  background: #ffececa2;
 }
 
 .header_title {

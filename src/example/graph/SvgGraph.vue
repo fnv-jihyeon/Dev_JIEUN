@@ -34,26 +34,30 @@ function remove(stat) {
 </script>
 
 <template>
-  <svg width="200" height="200">
-    <PolyGraph :stats="stats"></PolyGraph>
-  </svg>
+  <div class="graph">
+    <svg width="200" height="200">
+      <PolyGraph :stats="stats"></PolyGraph>
+    </svg>
 
-  <div v-for="(stat, index) in stats" :key="index">
-    <label>{{ stat.label }}</label>
-    <input type="range" v-model="stat.value" min="0" max="100" />
-    <span>{{ stat.value }}</span>
-    <button @click="remove(stat)" class="remove">X</button>
+    <div v-for="(stat, index) in stats" :key="index">
+      <label class="graph-label">{{ stat.label }}</label>
+      <input type="range" v-model="stat.value" min="0" max="100" />
+      <span>{{ stat.value }}</span>
+      <button @click="remove(stat)" class="remove">X</button>
+    </div>
+
+    <form id="add">
+      <input name="newlabel" v-model="newLabel" />
+      <button @click="add">Add a Stat</button>
+    </form>
   </div>
-
-  <form id="add">
-    <input name="newlabel" v-model="newLabel" />
-    <button @click="add">Add a Stat</button>
-  </form>
-
-  <pre id="raw">{{ stats }}</pre>
 </template>
 
 <style>
+.graph {
+  position: relative;
+}
+
 polygon {
   fill: #42b983;
   opacity: 0.75;
@@ -69,7 +73,7 @@ text {
   fill: #666;
 }
 
-label {
+.graph-label {
   display: inline-block;
   margin-left: 10px;
   width: 20px;
