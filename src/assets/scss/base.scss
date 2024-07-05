@@ -4,11 +4,13 @@
 
 body {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕',
-    helvetica, 'Apple SD Gothic Neo', sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 body,

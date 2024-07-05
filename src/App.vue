@@ -1,6 +1,6 @@
 <script setup>
-import TheHeader from './components/TheHeader.vue';
-import TheFooter from './components/TheFooter.vue';
+import TheHeader from './components/layout/TheHeader.vue';
+import TheFooter from './components/layout/TheFooter.vue';
 </script>
 
 <template>
@@ -14,6 +14,7 @@ import TheFooter from './components/TheFooter.vue';
 </template>
 
 <style lang="scss">
+@import 'style.scss';
 .app_container {
   display: flex;
   flex-direction: column;

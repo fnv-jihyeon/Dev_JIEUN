@@ -1,0 +1,45 @@
+$BLUE_NORMAL: #0066ff;
+$BLUE_STRONG: #2c63e2;
+$BLUE_HEAVY: #0054d1;
+
+$LABEL_NORMAL: #333333;
+$LABEL_STRONG: #000000;
+$LABEL_ALTERNATIVE: #7a7a7d;
+
+$BACKGROUND_NORMAL: #ffffff;
+$BACKGROUND_NEUTRAL: #6395f6;
+$BACKGROUND_LIGHTGRAY: #f9fafb;
+$BACKGROUND_DARK: #2f2f2f;
+
+.blue_normal {
+  color: $BLUE_NORMAL;
+}
+.blue_strong {
+  color: $BLUE_STRONG;
+}
+.blue_heavy {
+  color: $BLUE_HEAVY;
+}
+
+.label_normal {
+  color: $LABEL_NORMAL;
+}
+.label_strong {
+  color: $LABEL_STRONG;
+}
+.label_alternative {
+  color: $LABEL_ALTERNATIVE;
+}
+
+.bg_normal {
+  color: $BACKGROUND_NORMAL;
+}
+.bg_neutral {
+  color: $BACKGROUND_NEUTRAL;
+}
+.bg_lightgray {
+  color: $BACKGROUND_LIGHTGRAY;
+}
+.bg_dark {
+  color: $BACKGROUND_DARK;
+}
