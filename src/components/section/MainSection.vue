@@ -2,18 +2,20 @@
 
 <template>
   <section class="main_container">
-    <div>
+    <div class="main_wrapper">
       <div class="main_text">
-        <div class="main_title">
-          <div>사업을 위한 첫 걸음</div>
-          <div>최선의 선택, 피네보</div>
-        </div>
-        <div class="main_description">
-          <div>결제, 매장관리, 정산 등 서비스에</div>
-          <div>맞게 활용해 보세요</div>
-        </div>
+        <h1 class="main_title">
+          <span>사업을 위한 첫 걸음</span>
+          <span>최선의 선택, 피네보</span>
+        </h1>
+        <p class="main_description">
+          <span>결제, 매장관리, 정산 등 서비스에&nbsp;</span>
+          <span>맞게 활용해 보세요</span>
+        </p>
       </div>
-      <figure><img src="@/assets/images/finevo_main.png" /></figure>
+      <figure class="main_image">
+        <img src="@/assets/images/finevo_main.png" />
+      </figure>
     </div>
   </section>
 </template>
@@ -27,11 +29,11 @@
   align-items: center;
   justify-content: center;
 
-  > div {
+  .main_wrapper {
     display: flex;
-    width: 1311px;
-    justify-content: space-between;
+    gap: 163px;
     align-items: center;
+    justify-content: center;
   }
 }
 
@@ -46,13 +48,28 @@
     font-weight: 700;
     font-size: 60px;
     color: $LABEL_NORMAL;
+    line-height: 78px;
+
+    span {
+      display: block;
+    }
   }
-  .main_description {
-    font-weight: 500;
-    font-size: 20px;
-    color: $LABEL_ALTERNATIVE;
-    display: flex;
-    flex-direction: row;
+}
+
+.main_description {
+  font-weight: 500;
+  font-size: 20px;
+  color: $LABEL_ALTERNATIVE;
+  line-height: 28px;
+}
+
+.main_image {
+  display: flex;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 702.22px;
+    max-height: 100%;
   }
 }
 
@@ -61,14 +78,9 @@
     height: 852px;
     align-items: flex-start;
 
-    > div {
+    .main_wrapper {
       flex-direction: column;
       gap: 0;
-
-      figure img {
-        width: 430.7px;
-        height: 387.75px;
-      }
     }
   }
 
@@ -80,13 +92,27 @@
     .main_title {
       font-weight: 800;
       font-size: 34px;
+      line-height: 41.6px;
     }
+
     .main_description {
       font-weight: 400;
       font-size: 14px;
-      flex-direction: column;
-      align-items: center;
       color: $LABEL_NORMAL;
+      line-height: 20px;
+
+      span {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  .main_image {
+    img {
+      width: 100%;
+      max-width: 430.7px;
+      max-height: 387.75px;
     }
   }
 }

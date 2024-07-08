@@ -11,15 +11,15 @@ const props = defineProps({
 
 <template>
   <section class="box_content_container">
-    <div class="label_normal">
-      <div class="box_content_title">
-        <div class="box_content_caption">{{ props.caption }}</div>
-        <div class="box_content_title">{{ props.title }}</div>
-      </div>
-      <div class="box_content_description">
-        <div>{{ props.description1 }}</div>
-        <div>{{ props.description2 }}</div>
-      </div>
+    <div class="box_content_text">
+      <header>
+        <h2 class="box_content_caption">{{ props.caption }}</h2>
+        <h1 class="box_content_title">{{ props.title }}</h1>
+      </header>
+      <p class="box_content_description">
+        <span>{{ props.description1 }}</span>
+        <span>{{ props.description2 }}</span>
+      </p>
     </div>
     <img :src="require(`@/assets/images/${props.image}_icon.png`)" />
   </section>
@@ -28,6 +28,7 @@ const props = defineProps({
 <style lang="scss">
 .box_content_container {
   background-color: $BACKGROUND_NORMAL;
+  min-width: 430px;
   width: 430px;
   height: 368px;
   border-radius: 24px;
@@ -42,15 +43,16 @@ const props = defineProps({
     height: 196px;
   }
 
-  .label_normal {
+  .box_content_text {
+    font-family: 'Pretendard';
+    color: $LABEL_NORMAL;
     display: flex;
     position: relative;
-    z-index: 10;
     flex-direction: column;
     gap: 8px;
-    font-family: 'Pretendard';
+    z-index: 10;
 
-    .box_content_title {
+    header {
       display: flex;
       flex-direction: column;
       gap: 2px;
@@ -58,55 +60,64 @@ const props = defineProps({
       .box_content_caption {
         font-weight: 500;
         font-size: 18px;
+        line-height: 26px;
       }
 
       .box_content_title {
         font-weight: 700;
         font-size: 32px;
+        line-height: 41.6px;
       }
     }
 
     .box_content_description {
       font-weight: 500;
       font-size: 20px;
+      line-height: 28px;
+
+      span {
+        display: block;
+      }
     }
   }
 }
 @media (max-width: 767px) {
   .box_content_container {
-    width: 100%;
-    min-width: 345px;
+    width: 345px;
     height: 188px;
     border-radius: 19.84px;
     padding: 36px 30.58px 66.12px 30.58px;
 
     img {
+      position: absolute;
       right: 10px;
       bottom: 8px;
       width: 95px;
       height: 95px;
     }
 
-    .label_normal {
+    .box_content_text {
       gap: 19.84px;
 
-      .box_content_title {
+      header {
         gap: 0;
 
         .box_content_caption {
           font-weight: 400;
           font-size: 14px;
+          line-height: 20px;
         }
 
         .box_content_title {
           font-weight: 800;
           font-size: 26px;
+          line-height: 36px;
         }
       }
 
       .box_content_description {
-        font-weight: 500;
         font-size: 16px;
+        line-height: 24px;
       }
     }
   }

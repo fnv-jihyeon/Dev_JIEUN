@@ -39,7 +39,7 @@ const boxContents = [paymentBox, sassBox, solutionBox];
   <section class="business_container">
     <BannerTitle v-bind="banner" />
     <div class="business_content">
-      <div>
+      <div class="boxes_wrapper">
         <BoxContent
           v-for="(box, index) in boxContents"
           :key="index"
@@ -55,27 +55,36 @@ const boxContents = [paymentBox, sassBox, solutionBox];
   background-color: $BACKGROUND_NEUTRAL;
   width: 100%;
   height: 100vh;
-  padding: 60px 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.business_content > div {
-  display: flex;
-  gap: 20px;
+.business_content {
+  width: 100%;
+
+  .boxes_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 767px) {
   .business_container {
     height: 928px;
-    flex-direction: column;
+    gap: 60px;
   }
 
-  .business_content > div {
-    flex-direction: column;
-    gap: 12px;
+  .business_content {
+    width: 100%;
+    padding: 0 24px;
+
+    .boxes_wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
   }
 }
 </style>

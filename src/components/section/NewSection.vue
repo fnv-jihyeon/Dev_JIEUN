@@ -13,9 +13,9 @@ const banner = {
 <template>
   <section class="new_container">
     <BannerTitle v-bind="banner" />
-    <div class="new_image">
+    <figure class="new_image">
       <img src="@/assets/images/main_person.png" />
-    </div>
+    </figure>
   </section>
 </template>
 
@@ -24,21 +24,16 @@ const banner = {
   background-color: $BACKGROUND_LIGHTGRAY;
   width: 100%;
   height: 100vh;
-  padding: 60px 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
 
   .new_image {
-    width: 100%;
-    height: 100%;
     display: flex;
-    align-items: center;
+    overflow: hidden;
     justify-content: center;
     img {
-      width: 100%;
-      height: 100%;
+      width: 928px;
+      height: auto;
       object-fit: contain;
     }
   }
@@ -49,18 +44,11 @@ const banner = {
     height: 812px;
     gap: 50px;
     padding: 0;
-    justify-content: center;
 
     .new_image {
-      width: 393px;
-      height: 340.01px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+        width: 378px;
+        height: 282px;
       }
     }
   }
