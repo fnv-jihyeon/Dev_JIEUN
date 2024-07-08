@@ -29,6 +29,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-left: 157px;
 
   .main_wrapper {
     display: flex;
@@ -78,6 +79,7 @@
   .main_container {
     height: 852px;
     align-items: flex-start;
+    padding-left: 0;
 
     .main_wrapper {
       flex-direction: column;
