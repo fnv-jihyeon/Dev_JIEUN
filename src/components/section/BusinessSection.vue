@@ -57,6 +57,7 @@ const boxContents = [paymentBox, sassBox, solutionBox];
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .business_content {

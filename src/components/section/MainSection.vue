@@ -28,6 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 
   .main_wrapper {
     display: flex;
