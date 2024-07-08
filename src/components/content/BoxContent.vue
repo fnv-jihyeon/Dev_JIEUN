@@ -83,6 +83,7 @@ const props = defineProps({
 }
 @media (max-width: 767px) {
   .box_content_container {
+    min-width: 345px;
     width: 345px;
     height: 188px;
     border-radius: 19.84px;

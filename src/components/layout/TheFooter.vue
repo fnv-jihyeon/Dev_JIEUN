@@ -6,28 +6,6 @@
           <img src="@/assets/images/finevo_logo_white.png" />
         </figure>
         <div class="label1 footer_info_box bg_normal">
-          <div class="footer_data">
-            <div class="footer_drop">
-              <span>Family Site</span>
-              <img src="@/assets/images/chevron_up_icon.png" />
-            </div>
-            <div class="footer_rule">
-              <div>
-                <router-link to="">개인정보 처리방침</router-link>
-                <router-link to="">이용약관</router-link>
-              </div>
-              <div>
-                <div>
-                  <span class="bg_neutral">IR</span>
-                  <img src="@/assets/images/download_icon.png" />
-                </div>
-                <div>
-                  <span class="bg_neutral">공시자료</span>
-                  <img src="@/assets/images/download_icon.png" />
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="body4 footer_info">
             <div>
               <span>대표 : 심정석</span>
@@ -112,41 +90,6 @@
   }
 
   .footer_info_box {
-    .footer_data {
-      display: flex;
-      flex-direction: column;
-      gap: 71px;
-    }
-
-    .footer_drop {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 0.5px solid $BACKGROUND_NORMAL;
-      cursor: pointer;
-    }
-
-    .footer_rule {
-      display: flex;
-      flex-direction: column;
-      gap: 31px;
-
-      a {
-        color: $BACKGROUND_NORMAL;
-      }
-
-      div {
-        display: flex;
-        gap: 24px;
-        align-items: center;
-
-        div {
-          gap: 6px;
-          cursor: pointer;
-        }
-      }
-    }
-
     .footer_info {
       font-weight: 400;
       font-size: 14px;
