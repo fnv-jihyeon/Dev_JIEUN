@@ -40,6 +40,8 @@
     display: flex;
     flex-direction: column;
     gap: 84px;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
 

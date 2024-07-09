@@ -1,5 +1,13 @@
+<script setup>
+import AboutSection from '@/components/section/AboutSection.vue';
+import FounderSection from '@/components/section/FounderSection.vue';
+import HistorySection from '@/components/section/HistorySection.vue';
+import NowSection from '@/components/section/NowSection.vue';
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <AboutSection />
+  <FounderSection />
+  <HistorySection />
+  <NowSection />
 </template>

@@ -47,8 +47,7 @@
   white-space: nowrap;
 
   .main_title {
-    font-weight: 700;
-    font-size: 60px;
+    @extend .display1;
     color: $LABEL_NORMAL;
     line-height: 78px;
 
@@ -59,9 +58,7 @@
 }
 
 .main_description {
-  font-weight: 500;
-  font-size: 20px;
-  color: $LABEL_ALTERNATIVE;
+  @extend .body2, .label_alternative;
   line-height: 28px;
 }
 

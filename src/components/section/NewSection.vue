@@ -26,6 +26,7 @@ const banner = {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   .new_image {
     display: flex;
@@ -42,8 +43,8 @@ const banner = {
 @media (max-width: 767px) {
   .new_container {
     height: 812px;
-    gap: 50px;
-    padding: 0;
+    gap: 10px;
+    padding-top: 60px;
 
     .new_image {
       img {

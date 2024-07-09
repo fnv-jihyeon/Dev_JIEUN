@@ -73,13 +73,12 @@ const boxContents = [paymentBox, sassBox, solutionBox];
 
 @media (max-width: 767px) {
   .business_container {
-    height: 928px;
-    gap: 60px;
+    height: 1044px;
+    padding: 60px 24px 0;
   }
 
   .business_content {
     width: 100%;
-    padding: 0 24px;
 
     .boxes_wrapper {
       flex-direction: column;

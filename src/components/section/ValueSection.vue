@@ -34,6 +34,7 @@ const partners = ['naver', 'kt', 'sc', 'smartro'];
   background-color: $BACKGROUND_NORMAL;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .value_content {
@@ -62,10 +63,11 @@ const partners = ['naver', 'kt', 'sc', 'smartro'];
 @media (max-width: 767px) {
   .value_container {
     height: 842px;
+    padding-top: 60px;
   }
 
   .value_content {
-    padding-top: 33px;
+    padding: 0;
 
     .value_boxes {
       grid-template-columns: 1fr;

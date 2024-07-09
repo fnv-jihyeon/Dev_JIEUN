@@ -1,14 +1,18 @@
 <template>
   <header class="header_container">
     <div class="header_layout">
-      <img src="@/assets/images/finevo_logo.png" />
+      <router-link to="/"
+        ><img src="@/assets/images/finevo_logo.png"
+      /></router-link>
       <nav class="header_nav">
-        <router-link to="" class="body4 header_nav_text">회사소개</router-link>
-        <router-link to="" class="body4 header_nav_text">서비스</router-link>
+        <router-link to="/about" class="body4 header_nav_text"
+          >회사소개</router-link
+        >
+        <!--<router-link to="" class="body4 header_nav_text">서비스</router-link>
         <router-link to="" class="body4 header_nav_text"
           >서비스신청</router-link
         >
-        <router-link to="" class="body4 header_nav_text">고객지원</router-link>
+        <router-link to="" class="body4 header_nav_text">고객지원</router-link>-->
         <router-link to="" class="body4 header_nav_text">FINEVO IN</router-link>
       </nav>
       <img class="hamburger" src="@/assets/images/hamburger_icon.png" />
@@ -32,18 +36,29 @@
   div {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 833px;
   }
 
   nav {
     display: flex;
     gap: 48px;
     cursor: pointer;
+    white-space: nowrap;
   }
 
   .hamburger {
     display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header_container {
+    div {
+      justify-content: space-between;
+      gap: 0;
+    }
   }
 }
 

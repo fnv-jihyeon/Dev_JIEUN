@@ -6,18 +6,24 @@ const props = defineProps({
   title1: String,
   title2: String,
   detail: String,
+  direction: {
+    type: String,
+    default: 'column',
+  },
 });
 </script>
 
 <template>
   <section class="banner_title_container">
     <div class="banner_title_text" :class="props.color">
-      <h1 class="banner_caption">{{ props.caption }}</h1>
-      <div class="banner_title">
-        <h2>{{ props.title1 }}</h2>
-        <h2>{{ props.title2 }}</h2>
+      <h1 v-show="props.caption" class="banner_caption">{{ props.caption }}</h1>
+      <div class="banner_title" :class="props.direction">
+        <h2 v-show="props.title1">
+          {{ props.title1 }}<span v-show="direction">&nbsp;</span>
+        </h2>
+        <h2 v-show="props.title2">{{ props.title2 }}</h2>
       </div>
-      <p class="banner_detail">{{ props.detail }}</p>
+      <p v-show="props.detail" class="banner_detail">{{ props.detail }}</p>
     </div>
   </section>
 </template>
@@ -36,11 +42,21 @@ const props = defineProps({
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
+  white-space: nowrap;
 
   .banner_caption {
     font-size: 20px;
     font-weight: 500;
     color: $BLUE_HEAVY;
+  }
+
+  .banner_title {
+    display: flex;
+    flex-direction: column;
+
+    &.row {
+      flex-direction: row;
+    }
   }
 
   .banner_title h2 {
@@ -53,7 +69,7 @@ const props = defineProps({
 
 @media (max-width: 767px) {
   .banner_title_container {
-    padding: 120px 24px 0;
+    padding: 60px 8px;
   }
 
   .banner_title_text {
@@ -65,10 +81,16 @@ const props = defineProps({
       font-size: 16px;
     }
 
-    .banner_title h2 {
-      font-weight: 800;
-      font-size: 28px;
-      line-height: 38px;
+    .banner_title {
+      &.row {
+        flex-direction: column;
+      }
+
+      h2 {
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 38px;
+      }
     }
 
     .banner_detail {
