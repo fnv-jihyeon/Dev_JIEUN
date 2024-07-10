@@ -16,14 +16,14 @@ const props = defineProps({
 <template>
   <section class="banner_title_container">
     <div class="banner_title_text" :class="props.color">
-      <h1 v-show="props.caption" class="banner_caption">{{ props.caption }}</h1>
+      <h1 v-show="props.caption" class="banner_caption">{{ caption }}</h1>
       <div class="banner_title" :class="props.direction">
         <h2 v-show="props.title1">
-          {{ props.title1 }}<span v-show="direction">&nbsp;</span>
+          {{ title1 }}<span v-show="direction">&nbsp;</span>
         </h2>
-        <h2 v-show="props.title2">{{ props.title2 }}</h2>
+        <h2 v-show="props.title2">{{ title2 }}</h2>
       </div>
-      <p v-show="props.detail" class="banner_detail">{{ props.detail }}</p>
+      <p v-show="props.detail" class="banner_detail">{{ detail }}</p>
     </div>
   </section>
 </template>

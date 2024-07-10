@@ -50,7 +50,7 @@ const contents = [
         :key="content.step"
       >
         <figure class="now_image">
-          <img :src="require(`@/assets/images/${content.image}.png`)" />
+          <img :src="require(`@/assets/images/${content.image}.svg`)" />
         </figure>
         <h2 class="now_step">Step{{ content.step }}</h2>
         <h1 class="now_title">{{ content.title }}</h1>

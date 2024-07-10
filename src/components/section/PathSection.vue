@@ -44,7 +44,7 @@ const contents = [
         >
           <div class="path_contentWrapper">
             <img
-              :src="require(`@/assets/images/${content.image}.png`)"
+              :src="require(`@/assets/images/${content.image}.svg`)"
               :alt="content.title"
             />
             <div class="path_contentText">

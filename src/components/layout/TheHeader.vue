@@ -13,7 +13,9 @@
           >서비스신청</router-link
         >
         <router-link to="" class="body4 header_nav_text">고객지원</router-link>-->
-        <router-link to="" class="body4 header_nav_text">FINEVO IN</router-link>
+        <router-link to="/finevo-in" class="body4 header_nav_text"
+          >FINEVO IN</router-link
+        >
       </nav>
       <img class="hamburger" src="@/assets/images/hamburger_icon.png" />
     </div>

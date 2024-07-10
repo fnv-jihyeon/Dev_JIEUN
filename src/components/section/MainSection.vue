@@ -14,7 +14,7 @@
         </p>
       </div>
       <figure class="main_image">
-        <img src="@/assets/images/finevo_main.png" />
+        <img src="@/assets/images/finevo_main.svg" />
       </figure>
     </div>
   </section>

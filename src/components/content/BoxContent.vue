@@ -10,19 +10,19 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="box_content_container">
+  <article class="box_content_container">
     <div class="box_content_text">
       <header>
-        <h2 class="box_content_caption">{{ props.caption }}</h2>
-        <h1 class="box_content_title">{{ props.title }}</h1>
+        <h2 class="box_content_caption">{{ caption }}</h2>
+        <h1 class="box_content_title">{{ title }}</h1>
       </header>
       <p class="box_content_description">
-        <span>{{ props.description1 }}</span>
-        <span>{{ props.description2 }}</span>
+        <span>{{ description1 }}</span>
+        <span>{{ description2 }}</span>
       </p>
     </div>
-    <img :src="require(`@/assets/images/${props.image}_icon.png`)" />
-  </section>
+    <img :src="require(`@/assets/images/${props.image}_icon.svg`)" />
+  </article>
 </template>
 
 <style lang="scss">
