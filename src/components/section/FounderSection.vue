@@ -44,65 +44,65 @@ const banner = {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
 
-.founder_content {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-
-  .founder_image {
-    width: 476px;
-    height: 476px;
-    border-radius: 8px;
-    background-image: url('@/assets/images/ceo.png');
-    background-size: cover;
-    padding: 35px 85px;
+  .founder_content {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    font-family: 'Pretendard';
-    color: $BACKGROUND_NORMAL;
-
-    h4 {
-      font-size: 20px;
-      font-weight: 500;
-      line-height: 38px;
-    }
-
-    h3 {
-      @extend .title2;
-      line-height: 41.6px;
-    }
-  }
-
-  .founder_description {
-    width: 476px;
-    height: 476px;
-    border-radius: 8px;
-    padding: 8px 40px;
-    background: $BACKGROUND_NEUTRAL;
-    display: flex;
-    align-items: center;
+    gap: 12px;
     justify-content: center;
-    overflow: hidden;
 
-    div {
+    .founder_image {
+      width: 476px;
+      height: 476px;
+      border-radius: 8px;
+      background-image: url('@/assets/images/ceo.png');
+      background-size: cover;
+      padding: 35px 85px;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      justify-content: flex-end;
+      align-items: flex-end;
+      font-family: 'Pretendard';
       color: $BACKGROUND_NORMAL;
-      min-width: 396px;
 
-      h3 {
-        @extend .title5;
-        line-height: 28.64px;
+      h4 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 38px;
       }
 
-      p {
-        @extend .body4;
-        line-height: 26px;
+      h3 {
+        @extend .title2;
+        line-height: 41.6px;
+      }
+    }
+
+    .founder_description {
+      width: 476px;
+      height: 476px;
+      border-radius: 8px;
+      padding: 8px 40px;
+      background: $BACKGROUND_NEUTRAL;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        color: $BACKGROUND_NORMAL;
+        min-width: 396px;
+
+        h3 {
+          @extend .title5;
+          line-height: 28.64px;
+        }
+
+        p {
+          @extend .body4;
+          line-height: 26px;
+        }
       }
     }
   }
@@ -112,35 +112,35 @@ const banner = {
   .founder_container {
     height: 1156px;
     gap: 4px;
-  }
 
-  .founder_content {
-    flex-direction: column;
-    align-items: center;
+    .founder_content {
+      flex-direction: column;
+      align-items: center;
 
-    .founder_image {
-      width: 340px;
-      height: 340px;
-      padding: 13.94px 51px;
+      .founder_image {
+        width: 340px;
+        height: 340px;
+        padding: 13.94px 51px;
 
-      h4 {
-        font-size: 15.03px;
-        line-height: 28.57px;
+        h4 {
+          font-size: 15.03px;
+          line-height: 28.57px;
+        }
+
+        h3 {
+          font-size: 24.06px;
+          font-weight: 700;
+          line-height: 31.27px;
+        }
       }
 
-      h3 {
-        font-size: 24.06px;
-        font-weight: 700;
-        line-height: 31.27px;
-      }
-    }
+      .founder_description {
+        width: 340px;
+        height: 476px;
 
-    .founder_description {
-      width: 340px;
-      height: 476px;
-
-      div {
-        min-width: 260px;
+        div {
+          min-width: 260px;
+        }
       }
     }
   }

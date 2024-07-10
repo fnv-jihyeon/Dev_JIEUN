@@ -22,6 +22,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  @media (max-width: 767px) {
+    height: 812px;
+    background-image: url('@/assets/images/about_mobile.png');
+  }
 }
 
 .about_text {
@@ -46,15 +51,8 @@
     @extend .display2, .bg_normal;
     line-height: 62.4px;
   }
-}
 
-@media (max-width: 767px) {
-  .about_container {
-    height: 812px;
-    background-image: url('@/assets/images/about_mobile.png');
-  }
-
-  .about_text {
+  @media (max-width: 767px) {
     gap: 10px;
 
     h1,

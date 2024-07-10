@@ -11,27 +11,33 @@ const banner = {
 const bannerContent = [
   {
     year: 2023,
-    content1: '양평군청 결제데이터 공급 계약',
-    content2: '한국핀테크지원센터 금융테스트베드 지원 사업 선정',
-    content3: 'KT클라우드 공식 MSP 협약 (금융특화)',
-    content4: '기술혁신형 중소기업 (INNOBIZ) 인증',
-    content5: '한국핀테크지원센터 금융클라우드 지원사업 선정',
+    details: [
+      '양평군청 결제데이터 공급 계약',
+      '한국핀테크지원센터 금융테스트베드 지원 사업 선정',
+      'KT클라우드 공식 MSP 협약 (금융특화)',
+      '기술혁신형 중소기업 (INNOBIZ) 인증',
+      '한국핀테크지원센터 금융클라우드 지원사업 선정',
+    ],
   },
   {
     year: 2022,
-    content1: '양평군청 결제데이터 공급 계약',
-    content2: '한국핀테크지원센터 금융테스트베드 지원 사업 선정',
-    content3: 'KT클라우드 공식 MSP 협약 (금융특화)',
-    content4: '기술혁신형 중소기업 (INNOBIZ) 인증',
-    content5: '한국핀테크지원센터 금융클라우드 지원사업 선정',
+    details: [
+      '양평군청 결제데이터 공급 계약',
+      '한국핀테크지원센터 금융테스트베드 지원 사업 선정',
+      'KT클라우드 공식 MSP 협약 (금융특화)',
+      '기술혁신형 중소기업 (INNOBIZ) 인증',
+      '한국핀테크지원센터 금융클라우드 지원사업 선정',
+    ],
   },
   {
     year: 2021,
-    content1: '양평군청 결제데이터 공급 계약',
-    content2: '한국핀테크지원센터 금융테스트베드 지원 사업 선정',
-    content3: 'KT클라우드 공식 MSP 협약 (금융특화)',
-    content4: '기술혁신형 중소기업 (INNOBIZ) 인증',
-    content5: '한국핀테크지원센터 금융클라우드 지원사업 선정',
+    details: [
+      '양평군청 결제데이터 공급 계약',
+      '한국핀테크지원센터 금융테스트베드 지원 사업 선정',
+      'KT클라우드 공식 MSP 협약 (금융특화)',
+      '기술혁신형 중소기업 (INNOBIZ) 인증',
+      '한국핀테크지원센터 금융클라우드 지원사업 선정',
+    ],
   },
 ];
 </script>
@@ -44,16 +50,16 @@ const bannerContent = [
         class="history_contentBox"
         v-for="(content, index) in bannerContent"
         :key="index"
-        v-bind="content"
       >
         <div>
-          <h1>{{ content.year }}</h1>
-          <p>
-            <span>{{ content.content1 }}</span>
-            <span>{{ content.content2 }}</span>
-            <span>{{ content.content3 }}</span>
-            <span>{{ content.content4 }}</span>
-            <span>{{ content.content5 }}</span>
+          <h1 class="history_year">{{ content.year }}</h1>
+          <p class="history_details">
+            <span
+              v-for="(detail, detailIndex) in content.details"
+              :key="detailIndex"
+            >
+              {{ detail }}
+            </span>
           </p>
         </div>
       </div>
@@ -69,43 +75,43 @@ const bannerContent = [
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
 
-.history_content {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.history_contentBox {
-  width: 373px;
-  min-width: 373px;
-  height: 406px;
-  border-radius: 16px;
-  padding: 0 36px;
-  background: $BACKGROUND_LIGHTGRAY;
-  display: flex;
-  align-items: center;
-
-  div {
+  .history_content {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    justify-content: center;
+    gap: 20px;
 
-    h1 {
-      @extend .display2, .blue_heavy;
-      line-height: 62.4px;
-    }
-
-    p {
-      @extend .body4, .label_normal;
-      line-height: 26px;
+    .history_contentBox {
+      width: 373px;
+      min-width: 373px;
+      height: 406px;
+      border-radius: 16px;
+      padding: 0 36px;
+      background: $BACKGROUND_LIGHTGRAY;
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      align-items: center;
 
-      span:nth-child(2) {
-        @extend .blue_strong;
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .history_year {
+          @extend .display2, .blue_heavy;
+          line-height: 62.4px;
+        }
+
+        .history_details {
+          @extend .body4, .label_normal;
+          line-height: 26px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+
+          span:nth-child(2) {
+            @extend .blue_strong;
+          }
+        }
       }
     }
   }
@@ -116,17 +122,17 @@ const bannerContent = [
     height: 721px;
     gap: 4px;
     padding: 0 24px;
-  }
 
-  .history_content {
-    gap: 12px;
-    justify-content: flex-start;
-    overflow-x: scroll;
-  }
+    .history_content {
+      gap: 12px;
+      justify-content: flex-start;
+      overflow-x: scroll;
 
-  .history_contentBox {
-    width: 327px;
-    height: 423px;
+      .history_contentBox {
+        width: 327px;
+        height: 423px;
+      }
+    }
   }
 }
 </style>

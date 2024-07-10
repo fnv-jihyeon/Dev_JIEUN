@@ -46,19 +46,16 @@ const contents = [
     <div class="now_content">
       <div
         class="now_contentBox"
-        v-for="(content, index) in contents"
-        :key="index"
-        v-bind="content"
+        v-for="content in contents"
+        :key="content.step"
       >
         <figure class="now_image">
           <img :src="require(`@/assets/images/${content.image}.png`)" />
         </figure>
-        <h2>Step{{ content.step }}</h2>
-        <h1>{{ content.title }}</h1>
-        <ul>
-          <li v-for="(list, index) in content.list" :key="index">
-            {{ list }}
-          </li>
+        <h2 class="now_step">Step{{ content.step }}</h2>
+        <h1 class="now_title">{{ content.title }}</h1>
+        <ul class="now_list">
+          <li v-for="item in content.list" :key="item">{{ item }}</li>
         </ul>
       </div>
     </div>
@@ -72,40 +69,78 @@ const contents = [
   background: $BACKGROUND_LIGHTGRAY;
   display: flex;
   flex-direction: column;
-}
+  overflow: hidden;
 
-.now_content {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-}
-
-.now_contentBox {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  figure {
-    width: 300px;
-    height: 260px;
-    background: #ffffff;
-    border-radius: 10px;
+  .now_content {
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
+    gap: 24px;
+    margin-top: -10px;
 
-  h2 {
-    @extend .body2, .blue_heavy;
-  }
+    .now_contentBox {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
 
-  h1 {
-    @extend .title6, .label_normal;
-  }
+      .now_image {
+        width: 300px;
+        height: 230px;
+        background: #ffffff;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-  li {
-    @extend .label2, .label_alternative;
+      .now_step {
+        @extend .body2, .blue_heavy;
+      }
+
+      .now_title {
+        @extend .title6, .label_normal;
+      }
+
+      .now_list {
+        li {
+          @extend .label2, .label_alternative;
+          line-height: 32px;
+          word-break: keep-all;
+          padding-left: 1em;
+          text-indent: -1em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .now_container {
+    height: 1846px;
+    padding: 0 24px;
+
+    .now_content {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-top: 0;
+
+      .now_contentBox {
+        height: 486px;
+
+        .now_image {
+          height: 260px;
+        }
+
+        .now_step {
+          line-height: 28px;
+        }
+
+        .now_title {
+          line-height: 38px;
+        }
+      }
+    }
   }
 }
 </style>
