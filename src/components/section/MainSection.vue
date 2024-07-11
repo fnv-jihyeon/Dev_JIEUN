@@ -3,16 +3,18 @@
 <template>
   <section class="main_container">
     <div class="main_wrapper">
-      <div class="main_text">
-        <h1 class="main_title">
-          <span>사업을 위한 첫 걸음</span>
-          <span>최선의 선택, 피네보</span>
-        </h1>
-        <p class="main_description">
-          <span>결제, 매장관리, 정산 등 서비스에&nbsp;</span>
-          <span>맞게 활용해 보세요</span>
-        </p>
-      </div>
+      <Transition appear name="fade">
+        <div class="main_text">
+          <h1 class="main_title">
+            <span>사업을 위한 첫 걸음</span>
+            <span>최선의 선택, 피네보</span>
+          </h1>
+          <p class="main_description">
+            <span>결제, 매장관리, 정산 등 서비스에&nbsp;</span>
+            <span>맞게 활용해 보세요</span>
+          </p>
+        </div>
+      </Transition>
       <figure class="main_image">
         <img src="@/assets/images/finevo_main.svg" />
       </figure>
@@ -56,11 +58,21 @@
       display: block;
     }
   }
+
+  .main_description {
+    @extend .body2, .label_alternative;
+    line-height: 28px;
+  }
 }
 
-.main_description {
-  @extend .body2, .label_alternative;
-  line-height: 28px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .main_image {

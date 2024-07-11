@@ -1,3 +1,18 @@
+<script setup>
+import { ref } from 'vue';
+import MobMenu from '@/components/menu/MobMenu.vue';
+
+const showMenu = ref(false);
+
+const openMenu = () => {
+  showMenu.value = true;
+};
+
+const closeMenu = () => {
+  showMenu.value = false;
+};
+</script>
+
 <template>
   <header class="header_container">
     <div class="header_layout">
@@ -17,9 +32,18 @@
           >FINEVO IN</router-link
         >
       </nav>
-      <img class="hamburger" src="@/assets/images/hamburger_icon.png" />
+      <img
+        class="hamburger"
+        :src="
+          showMenu
+            ? '@/assets/images/close_icon.png'
+            : '@/assets/images/hamburger_icon.png'
+        "
+        @click="showMenu ? closeMenu() : openMenu()"
+      />
     </div>
   </header>
+  <MobMenu v-if="showMenu" />
 </template>
 
 <style lang="scss">
