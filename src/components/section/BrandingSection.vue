@@ -57,12 +57,13 @@ const bannerContents = [
 <style lang="scss">
 .branding_container {
   width: 100%;
-  height: 100vh;
-  padding: 74px 0;
+  height: 1080px;
+  padding: 220px 0 88px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  gap: 46px;
 
   .branding_title {
     width: 100%;
@@ -70,7 +71,7 @@ const bannerContents = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 7.99px;
+    gap: 8px;
     @extend .label_normal;
     white-space: nowrap;
 
@@ -96,7 +97,7 @@ const bannerContents = [
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-      gap: 10px;
+      gap: 20px;
     }
   }
 }

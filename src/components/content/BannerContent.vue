@@ -30,10 +30,10 @@ const props = defineProps({
 
 <style lang="scss">
 .banner_content_container {
-  width: 350px;
-  height: 240px;
+  width: 372px;
+  height: 284px;
   border-radius: 20px;
-  padding: 0 20px;
+  padding: 0 30px;
   background: $BACKGROUND_LIGHTGRAY;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -43,19 +43,19 @@ const props = defineProps({
   .banner_content_box {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    padding: 0 0 15px;
+    gap: 17px;
+    padding: 0 0 30px;
 
     .banner_content_image {
       position: absolute;
-      top: 0px;
-      right: 5px;
+      top: 23px;
+      right: 30px;
     }
 
     .banner_content_top {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 10px;
       @extend .label_normal;
 
       h2 {

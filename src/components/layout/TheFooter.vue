@@ -1,11 +1,40 @@
+<script setup>
+import { ref } from 'vue';
+import FooterModal from '@/components/modal/FooterModal.vue';
+const showModal = ref(false);
+const modalUrl = ref('');
+
+const openModal = (type) => {
+  if (type === 'privacy_policy') {
+    modalUrl.value = '/assets/html/개인정보처리방침v0.1.htm';
+  } else if (type === 'terms_of_service') {
+    modalUrl.value = '/assets/html/terms_of_service.html';
+  }
+  showModal.value = true;
+};
+
+const closeModal = () => {
+  showModal.value = false;
+};
+</script>
+
 <template>
+  <Teleport to="body">
+    <FooterModal :show="showModal">
+      <iframe :src="modalUrl" frameborder="0"></iframe>
+    </FooterModal>
+  </Teleport>
   <footer class="footer_container">
     <section>
       <div class="footer_content">
         <figure>
           <img src="@/assets/images/finevo_logo_white.png" />
         </figure>
-        <div class="label1 footer_info_box bg_normal">
+        <div class="footer_data body2 bg_normal">
+          <span @click="openModal('privacy_policy')">개인정보 처리방침</span>
+          <span @click="openModal('terms_of_service')">이용약관</span>
+        </div>
+        <div class="footer_info_box bg_normal">
           <div class="body4 footer_info">
             <div>
               <span>대표 : 심정석</span>
@@ -23,6 +52,9 @@
         <span>Copyright© 2024 Finevo Inc All Rights Reserved.</span>
       </div>
     </section>
+    <Teleport to="body">
+      <FooterModal :show="showModal" :url="modalUrl" :close="closeModal" />
+    </Teleport>
   </footer>
 </template>
 
@@ -30,7 +62,7 @@
 .footer_container {
   background: $BACKGROUND_DARK;
   width: 100%;
-  max-height: 465.84px;
+  height: 540.84px;
   padding: 68px 0;
   display: flex;
   justify-content: center;
@@ -48,30 +80,30 @@
 .footer_content {
   display: flex;
   flex-direction: column;
-  gap: 49px;
+  gap: 48px;
 
   figure {
     padding: 8px 0;
   }
 
-  .footer_info_box {
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-  }
-
   .footer_data {
-    display: none;
+    display: flex;
+    gap: 44px;
+    line-height: 28px;
+    cursor: pointer;
   }
 
-  .footer_info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    div {
+  .footer_info_box {
+    .footer_info {
       display: flex;
-      gap: 40px;
+      flex-direction: column;
+      gap: 10px;
+
+      div {
+        display: flex;
+        gap: 40px;
+        line-height: 26px;
+      }
     }
   }
 }
@@ -79,26 +111,31 @@
 .footer_copyright {
   text-align: center;
   padding: 8px;
+  line-height: 24px;
 }
 
 @media (max-width: 767px) {
   .footer_container {
-    max-height: 629.37px;
-    padding: 8px 24px;
+    height: 602.84px;
+    padding: 68px 24px;
 
     section {
-      gap: 104px;
+      gap: 84px;
     }
   }
 
-  .footer_info_box {
-    .footer_info {
-      font-weight: 400;
-      font-size: 14px;
-
-      div {
-        flex-direction: column;
+  .footer_content {
+    .footer_info_box {
+      .footer_info {
         gap: 10px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          white-space: normal;
+          min-width: 345px;
+        }
       }
     }
   }

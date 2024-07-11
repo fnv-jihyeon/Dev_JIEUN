@@ -33,7 +33,9 @@ const contents = [
 
 <template>
   <section class="path_container">
-    <BannerTitle v-bind="banner" />
+    <div class="path_banner">
+      <BannerTitle v-bind="banner" />
+    </div>
     <div class="path_content">
       <figure class="path_map"></figure>
       <div class="path_box">
@@ -64,23 +66,27 @@ const contents = [
 <style lang="scss">
 .path_container {
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   background: $BACKGROUND_NORMAL;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
 
+  .path_banner {
+    margin-top: -100px;
+    margin-bottom: 30px;
+  }
+
   .path_content {
-    width: 1010px;
+    width: 1160px;
     display: flex;
     flex-direction: column;
-    gap: 9px;
-    margin-top: -5px;
+    gap: 13px;
 
     .path_map {
       width: 100%;
-      height: 368px;
+      height: 518px;
       border-radius: 24px;
       background-image: url('@/assets/images/map.png');
       background-size: cover;
@@ -91,13 +97,13 @@ const contents = [
       width: 100%;
       display: flex;
       flex-direction: row;
-      gap: 15px;
+      gap: 20px;
 
       .path_contentBox {
         width: 100%;
-        height: 110px;
+        height: 130px;
         border-radius: 12px;
-        padding: 8px 0px 8px 27px;
+        padding: 8px 0px 8px 50px;
         display: flex;
         align-items: center;
         background: $BACKGROUND_LIGHTGRAY;
@@ -136,6 +142,10 @@ const contents = [
     height: 975px;
     padding-top: 7px;
     gap: 30px;
+
+    .path_banner {
+      margin: 0;
+    }
 
     .path_content {
       width: 355px;

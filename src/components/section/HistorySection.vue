@@ -70,7 +70,7 @@ const bannerContent = [
 <style lang="scss">
 .history_container {
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -79,12 +79,12 @@ const bannerContent = [
   .history_content {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 21px;
 
     .history_contentBox {
       width: 373px;
       min-width: 373px;
-      height: 406px;
+      height: 423px;
       border-radius: 16px;
       padding: 0 36px;
       background: $BACKGROUND_LIGHTGRAY;

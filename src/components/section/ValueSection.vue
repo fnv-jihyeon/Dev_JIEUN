@@ -33,12 +33,12 @@ const partners = ['naver', 'kt', 'sc', 'smartro'];
 .value_container {
   background-color: $BACKGROUND_NORMAL;
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   overflow: hidden;
 }
 
 .value_content {
-  padding: 70px 8px 8px;
+  padding: 150px 8px 8px;
   display: flex;
   justify-content: center;
 

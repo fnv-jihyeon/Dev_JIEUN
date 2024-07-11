@@ -24,7 +24,7 @@
 .main_container {
   background-color: $BACKGROUND_NORMAL;
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,6 +50,7 @@
     @extend .display1;
     color: $LABEL_NORMAL;
     line-height: 78px;
+    letter-spacing: -1.2px;
 
     span {
       display: block;

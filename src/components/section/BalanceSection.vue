@@ -49,8 +49,8 @@ const balanceContents = [
 <style lang="scss">
 .balance_container {
   width: 100%;
-  height: 100vh;
-  padding: 74px 0;
+  height: 1080px;
+  padding: 220px 0;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -60,11 +60,10 @@ const balanceContents = [
   .balance_title {
     width: 100%;
     padding: 8px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 7.99px;
+    gap: 8px;
     @extend .label_normal;
     white-space: nowrap;
 

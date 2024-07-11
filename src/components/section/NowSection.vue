@@ -65,7 +65,7 @@ const contents = [
 <style lang="scss">
 .now_container {
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   background: $BACKGROUND_LIGHTGRAY;
   display: flex;
   flex-direction: column;
@@ -85,7 +85,7 @@ const contents = [
 
       .now_image {
         width: 300px;
-        height: 230px;
+        height: 260px;
         background: #ffffff;
         border-radius: 10px;
         display: flex;
@@ -95,10 +95,12 @@ const contents = [
 
       .now_step {
         @extend .body2, .blue_heavy;
+        line-height: 28px;
       }
 
       .now_title {
         @extend .title6, .label_normal;
+        line-height: 38px;
       }
 
       .now_list {

@@ -30,7 +30,7 @@ const props = defineProps({
 
 <style lang="scss">
 .banner_title_container {
-  padding: 70px 8px 40px;
+  padding: 190px 8px 60px;
 }
 
 .banner_title_text {

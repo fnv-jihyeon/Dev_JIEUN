@@ -39,7 +39,7 @@ const banner = {
 <style lang="scss">
 .founder_container {
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   background: $BACKGROUND_LIGHTGRAY;
   display: flex;
   flex-direction: column;

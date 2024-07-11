@@ -23,7 +23,7 @@ const banner = {
 .new_container {
   background-color: $BACKGROUND_LIGHTGRAY;
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   display: flex;
   flex-direction: column;
   overflow: hidden;

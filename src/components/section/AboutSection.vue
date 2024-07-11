@@ -8,16 +8,16 @@
       </div>
     </div>
   </section>
+  <div class="about_overlay"></div>
 </template>
 
 <style lang="scss">
 .about_container {
   width: 100%;
-  height: 100vh;
+  height: 1080px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 1);
   background-image: url('@/assets/images/about.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,12 +29,24 @@
   }
 }
 
+.about_overlay {
+  width: 100%;
+  height: 1080px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .about_text {
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: center;
   white-space: nowrap;
+  position: absolute;
+  z-index: 20;
 
   h2 {
     @extend .body2, .blue_normal;
