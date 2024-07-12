@@ -11,7 +11,7 @@ const banner = {
 </script>
 
 <template>
-  <section class="founder_container">
+  <section class="founder_container" id="ceo">
     <BannerTitle v-bind="banner" />
     <div class="founder_content">
       <figure class="founder_image">

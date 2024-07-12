@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import MobMenu from '@/components/menu/MobMenu.vue';
 
 const showMenu = ref(false);
@@ -10,6 +10,18 @@ const openMenu = () => {
 
 const closeMenu = () => {
   showMenu.value = false;
+};
+
+watch(showMenu, (newValue) => {
+  if (newValue) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+});
+
+const showAlert = () => {
+  alert('준비중입니다!');
 };
 </script>
 
@@ -23,11 +35,24 @@ const closeMenu = () => {
         <router-link to="/about" class="body4 header_nav_text"
           >회사소개</router-link
         >
-        <!--<router-link to="" class="body4 header_nav_text">서비스</router-link>
-        <router-link to="" class="body4 header_nav_text"
+        <router-link
+          to=""
+          class="body4 header_nav_text"
+          @click.prevent="showAlert"
+          >서비스</router-link
+        >
+        <router-link
+          to=""
+          class="body4 header_nav_text"
+          @click.prevent="showAlert"
           >서비스신청</router-link
         >
-        <router-link to="" class="body4 header_nav_text">고객지원</router-link>-->
+        <router-link
+          to=""
+          class="body4 header_nav_text"
+          @click.prevent="showAlert"
+          >고객지원</router-link
+        >
         <router-link to="/finevo-in" class="body4 header_nav_text"
           >FINEVO IN</router-link
         >
@@ -36,14 +61,16 @@ const closeMenu = () => {
         class="hamburger"
         :src="
           showMenu
-            ? '@/assets/images/close_icon.png'
-            : '@/assets/images/hamburger_icon.png'
+            ? require('@/assets/images/close_icon.png')
+            : require('@/assets/images/hamburger_icon.png')
         "
         @click="showMenu ? closeMenu() : openMenu()"
       />
     </div>
   </header>
-  <MobMenu v-if="showMenu" />
+  <Teleport to="body">
+    <MobMenu v-if="showMenu" @close="closeMenu" />
+  </Teleport>
 </template>
 
 <style lang="scss">
@@ -57,14 +84,14 @@ const closeMenu = () => {
   background: rgba(255, 255, 255, 0.7);
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
-  z-index: 100;
+  z-index: 40;
 
   div {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 833px;
+    gap: 501px;
   }
 
   nav {

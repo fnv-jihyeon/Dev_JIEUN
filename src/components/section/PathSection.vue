@@ -32,7 +32,7 @@ const contents = [
 </script>
 
 <template>
-  <section class="path_container">
+  <section class="path_container" id="path">
     <div class="path_banner">
       <BannerTitle v-bind="banner" />
     </div>

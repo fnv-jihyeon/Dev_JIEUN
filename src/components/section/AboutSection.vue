@@ -1,5 +1,5 @@
 <template>
-  <section class="about_container">
+  <section class="about_container" id="overview">
     <div class="about_text">
       <h2>Financial Evolution, FINEVO</h2>
       <div>
@@ -37,6 +37,10 @@
   left: 0;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 767px) {
+    height: 812px;
+  }
 }
 
 .about_text {

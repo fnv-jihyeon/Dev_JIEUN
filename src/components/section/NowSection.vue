@@ -41,7 +41,7 @@ const contents = [
 </script>
 
 <template>
-  <section class="now_container">
+  <section class="now_container" id="now">
     <BannerTitle v-bind="banner" />
     <div class="now_content">
       <div

@@ -43,7 +43,7 @@ const bannerContent = [
 </script>
 
 <template>
-  <section class="history_container">
+  <section class="history_container" id="history">
     <BannerTitle v-bind="banner" />
     <div class="history_content">
       <div
