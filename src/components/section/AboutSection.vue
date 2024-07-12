@@ -37,6 +37,7 @@
   left: 0;
   z-index: 10;
   background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 
   @media (max-width: 767px) {
     height: 812px;
@@ -48,9 +49,9 @@
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  white-space: nowrap;
-  position: absolute;
   z-index: 20;
+  white-space: nowrap;
+  overflow: hidden;
 
   h2 {
     @extend .body2, .blue_normal;

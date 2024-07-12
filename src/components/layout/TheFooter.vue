@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import FooterModal from '@/components/modal/FooterModal.vue';
 const showModal = ref(false);
 const modalUrl = ref('');
@@ -16,6 +16,14 @@ const openModal = (type) => {
 const closeModal = () => {
   showModal.value = false;
 };
+
+watch(showModal, (newValue) => {
+  if (newValue) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+});
 </script>
 
 <template>
@@ -32,7 +40,7 @@ const closeModal = () => {
         </figure>
         <div class="footer_data body2 bg_normal">
           <span @click="openModal('privacy_policy')">개인정보 처리방침</span>
-          <span @click="openModal('terms_of_service')">이용약관</span>
+          <!--<span @click="openModal('terms_of_service')">이용약관</span>-->
         </div>
         <div class="footer_info_box bg_normal">
           <div class="body4 footer_info">

@@ -17,25 +17,21 @@ const menuList = [
   {
     item: '서비스',
     path: '',
-    itemList: [],
     isOpen: ref(false),
   },
   {
     item: '서비스 신청',
     path: '',
-    itemList: [],
     isOpen: ref(false),
   },
   {
     item: '고객지원',
     path: '',
-    itemList: [],
     isOpen: ref(false),
   },
   {
     item: 'Finevo In',
     path: '/finevo-in',
-    itemList: [],
     isOpen: ref(false),
   },
 ];
@@ -46,6 +42,7 @@ const toggleMenu = (index) => {
       menu.isOpen.value = false;
     }
   });
+
   menuList[index].isOpen.value = !menuList[index].isOpen.value;
 };
 
@@ -59,7 +56,10 @@ const chevronImage = (index) => {
     <ul class="menu_list" v-for="(menu, index) in menuList" :key="index">
       <li class="menu_listItem" @click="toggleMenu(index)">
         <span>{{ menu.item }}</span>
-        <img :src="require(`@/assets/images/${chevronImage(index)}.svg`)" />
+        <img
+          v-if="menu.itemList"
+          :src="require(`@/assets/images/${chevronImage(index)}.svg`)"
+        />
       </li>
       <ul class="menu_subList" v-show="menu.isOpen.value">
         <li v-for="(subMenu, subindex) in menu.itemList" :key="subindex">
@@ -78,7 +78,6 @@ const chevronImage = (index) => {
 <style lang="scss">
 .menu_container {
   width: 100%;
-  min-width: 394px;
   height: 100vh;
   padding: 80px 0 140px;
   background: #ffffff;

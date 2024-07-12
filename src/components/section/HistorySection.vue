@@ -121,12 +121,12 @@ const bannerContent = [
   .history_container {
     height: 721px;
     gap: 4px;
-    padding: 0 24px;
 
     .history_content {
       gap: 12px;
       justify-content: flex-start;
       overflow-x: scroll;
+      padding: 0 24px;
 
       .history_contentBox {
         width: 327px;
