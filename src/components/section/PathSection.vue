@@ -128,6 +128,7 @@ const contents = [
             span {
               display: block;
               @extend .label4;
+              font-weight: 400;
               line-height: 20px;
             }
           }

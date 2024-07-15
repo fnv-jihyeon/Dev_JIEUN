@@ -1,24 +1,43 @@
-<script setup></script>
+<script setup>
+import { onMounted, ref } from 'vue';
+
+const videoRef = ref(null);
+
+onMounted(() => {
+  if (videoRef.value) {
+    videoRef.value.autoplay = true;
+    videoRef.value.muted = true;
+    videoRef.value.play();
+  }
+});
+</script>
 
 <template>
   <section class="main_container">
-    <div class="main_wrapper">
-      <Transition appear name="fade">
-        <div class="main_text">
-          <h1 class="main_title">
-            <span>사업을 위한 첫 걸음</span>
-            <span>최선의 선택, 피네보</span>
-          </h1>
-          <p class="main_description">
-            <span>결제, 매장관리, 정산 등 서비스에&nbsp;</span>
-            <span>맞게 활용해 보세요</span>
-          </p>
-        </div>
-      </Transition>
-      <figure class="main_image">
-        <img src="@/assets/images/finevo_main.svg" />
-      </figure>
-    </div>
+    <Transition appear name="move">
+      <div class="main_wrapper">
+        <Transition appear name="fade">
+          <div class="main_text">
+            <h1 class="main_title">
+              <span>사업을 위한 첫 걸음</span>
+              <span>최선의 선택, 피네보</span>
+            </h1>
+            <p class="main_description">
+              <span>결제, 매장관리, 정산 등 서비스에&nbsp;</span>
+              <span>맞게 활용해 보세요</span>
+            </p>
+          </div>
+        </Transition>
+        <figure class="main_image">
+          <video class="main_video" ref="videoRef" loop muted playsinline>
+            <source
+              src="@/assets/video/finevo_main_video.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </figure>
+      </div>
+    </Transition>
   </section>
 </template>
 
@@ -65,6 +84,28 @@
   }
 }
 
+.main_image {
+  display: flex;
+  overflow: hidden;
+  width: 702.22px;
+  height: 632px;
+  video {
+    width: 700.4px;
+    height: 630.7px;
+    object-fit: contain;
+  }
+}
+
+.move-enter-active,
+.move-leave-active {
+  transition: all 1.5s ease-in-out;
+}
+
+.move-enter-from,
+.move-leave-to {
+  transform: translateY(-25px);
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 2s ease;
@@ -73,16 +114,6 @@
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-}
-
-.main_image {
-  display: flex;
-  overflow: hidden;
-  img {
-    height: 100%;
-    width: 702.22px;
-    max-height: 100%;
-  }
 }
 
 @media (max-width: 767px) {
@@ -122,10 +153,11 @@
   }
 
   .main_image {
-    img {
-      width: 100%;
-      max-width: 430.7px;
-      max-height: 387.75px;
+    width: 430.7px;
+    height: 387.75px;
+    video {
+      width: 430.7px;
+      height: 387.5px;
     }
   }
 }
