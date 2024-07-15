@@ -30,9 +30,11 @@ const router = createRouter({
         el: to.hash,
         behavior: 'smooth',
       };
+    } else {
+      return { top: 0 };
     }
-    return { top: 0 };
   },
+  linkExactActiveClass: 'router-active',
 });
 
 export default router;

@@ -1,5 +1,7 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, defineEmits } from 'vue';
+
+const emit = defineEmits(['close']);
 
 const menuList = [
   {
@@ -36,14 +38,28 @@ const menuList = [
   },
 ];
 
-const toggleMenu = (index) => {
-  menuList.forEach((menu, i) => {
-    if (i !== index) {
-      menu.isOpen.value = false;
-    }
-  });
+const showAlert = () => {
+  alert('준비중입니다!');
+};
 
-  menuList[index].isOpen.value = !menuList[index].isOpen.value;
+const toggleMenu = (index) => {
+  const currentMenu = menuList[index];
+
+  if (!currentMenu.itemList) {
+    if (!currentMenu.path) {
+      showAlert();
+    } else if (currentMenu.path) {
+      emit('close');
+    }
+  } else {
+    menuList.forEach((menu, i) => {
+      if (i !== index) {
+        menu.isOpen.value = false;
+      }
+    });
+
+    currentMenu.isOpen.value = !currentMenu.isOpen.value;
+  }
 };
 
 const chevronImage = (index) => {
@@ -54,13 +70,15 @@ const chevronImage = (index) => {
 <template>
   <nav class="menu_container">
     <ul class="menu_list" v-for="(menu, index) in menuList" :key="index">
-      <li class="menu_listItem" @click="toggleMenu(index)">
-        <span>{{ menu.item }}</span>
-        <img
-          v-if="menu.itemList"
-          :src="require(`@/assets/images/${chevronImage(index)}.svg`)"
-        />
-      </li>
+      <router-link :to="!menu.itemList && menu.path" @click="toggleMenu(index)">
+        <li class="menu_listItem">
+          <span>{{ menu.item }}</span>
+          <img
+            v-if="menu.itemList"
+            :src="require(`@/assets/images/${chevronImage(index)}.svg`)"
+          />
+        </li>
+      </router-link>
       <ul class="menu_subList" v-show="menu.isOpen.value">
         <li v-for="(subMenu, subindex) in menu.itemList" :key="subindex">
           <router-link

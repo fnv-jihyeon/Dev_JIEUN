@@ -20,7 +20,8 @@ watch(showMenu, (newValue) => {
   }
 });
 
-const showAlert = () => {
+const showAlert = (e) => {
+  e.preventDefault();
   alert('준비중입니다!');
 };
 </script>
@@ -28,32 +29,17 @@ const showAlert = () => {
 <template>
   <header class="header_container">
     <div class="header_layout">
-      <router-link to="/"
-        ><img src="@/assets/images/finevo_logo.png"
+      <router-link to="/" @click="closeMenu"
+        ><img src="@/assets/images/finevo_logo.svg"
       /></router-link>
       <nav class="header_nav">
-        <router-link to="/about" class="body4 header_nav_text"
+        <router-link to="/about" class="body4 label_normal"
           >회사소개</router-link
         >
-        <router-link
-          to=""
-          class="body4 header_nav_text"
-          @click.prevent="showAlert"
-          >서비스</router-link
-        >
-        <router-link
-          to=""
-          class="body4 header_nav_text"
-          @click.prevent="showAlert"
-          >서비스신청</router-link
-        >
-        <router-link
-          to=""
-          class="body4 header_nav_text"
-          @click.prevent="showAlert"
-          >고객지원</router-link
-        >
-        <router-link to="/finevo-in" class="body4 header_nav_text"
+        <span class="body4 label_normal" @click="showAlert">서비스</span>
+        <span class="body4 label_normal" @click="showAlert">서비스신청</span>
+        <span class="body4 label_normal" @click="showAlert">고객지원</span>
+        <router-link to="/finevo-in" class="body4 label_normal"
           >FINEVO IN</router-link
         >
       </nav>
@@ -99,6 +85,10 @@ const showAlert = () => {
     gap: 48px;
     cursor: pointer;
     white-space: nowrap;
+
+    .router-active {
+      color: $BLUE_STRONG;
+    }
   }
 
   .hamburger {
