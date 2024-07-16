@@ -123,6 +123,7 @@ watch(showModal, (newValue) => {
 }
 
 .footer_copyright {
+  font-weight: 400;
   width: 100%;
   text-align: center;
   padding: 8px;

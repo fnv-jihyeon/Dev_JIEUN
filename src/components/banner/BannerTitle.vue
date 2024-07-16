@@ -38,14 +38,12 @@ const props = defineProps({
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   white-space: nowrap;
 
   .banner_caption {
-    font-size: 20px;
-    font-weight: 500;
     color: $BLUE_HEAVY;
   }
 
@@ -93,7 +91,6 @@ const props = defineProps({
     }
 
     .banner_detail {
-      font-weight: 400;
       font-size: 14px;
       line-height: 20px;
     }

@@ -70,7 +70,7 @@ const props = defineProps({
     }
 
     .box_content_description {
-      font-weight: 500;
+      font-weight: 400;
       font-size: 20px;
       line-height: 28px;
 

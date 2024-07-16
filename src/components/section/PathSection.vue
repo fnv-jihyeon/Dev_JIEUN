@@ -37,7 +37,12 @@ const contents = [
       <BannerTitle v-bind="banner" />
     </div>
     <div class="path_content">
-      <figure class="path_map"></figure>
+      <a
+        href="https://map.naver.com/p/search/%ED%94%BC%EB%84%A4%EB%B3%B4/place/1589230044?c=15.00,0,0,0,dh&isCorrectAnswer=true"
+        target="_blank"
+      >
+        <figure class="path_map"></figure>
+      </a>
       <div class="path_box">
         <div
           class="path_contentBox"

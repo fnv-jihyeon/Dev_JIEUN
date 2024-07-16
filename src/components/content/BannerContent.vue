@@ -70,6 +70,7 @@ const props = defineProps({
         span {
           @extend .label4;
           line-height: 20px;
+          font-weight: 400;
         }
       }
     }
@@ -110,6 +111,11 @@ const props = defineProps({
           font-size: 20px;
           line-height: 28px;
           letter-spacing: -0.5px;
+        }
+        p {
+          span {
+            font-weight: 500;
+          }
         }
       }
 

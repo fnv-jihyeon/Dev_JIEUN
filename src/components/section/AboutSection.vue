@@ -56,6 +56,7 @@
   h2 {
     @extend .body2, .blue_normal;
     line-height: 28px;
+    font-weight: 400;
   }
 
   div {

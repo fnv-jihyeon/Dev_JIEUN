@@ -70,7 +70,10 @@ const chevronImage = (index) => {
 <template>
   <nav class="menu_container">
     <ul class="menu_list" v-for="(menu, index) in menuList" :key="index">
-      <router-link :to="!menu.itemList && menu.path" @click="toggleMenu(index)">
+      <router-link
+        :to="!menu.itemList && menu.path"
+        @click.prevent="toggleMenu(index)"
+      >
         <li class="menu_listItem">
           <span>{{ menu.item }}</span>
           <img
@@ -134,6 +137,8 @@ const chevronImage = (index) => {
     justify-content: center;
     padding: 0 30px;
     @extend .label1;
+    font-weight: 400;
+    line-height: 24px;
 
     a {
       display: block;

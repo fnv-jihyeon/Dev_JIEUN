@@ -96,6 +96,7 @@ const contents = [
       .now_step {
         @extend .body2, .blue_heavy;
         line-height: 28px;
+        font-weight: 400;
       }
 
       .now_title {
