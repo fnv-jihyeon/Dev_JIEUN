@@ -125,12 +125,31 @@ const bannerContent = [
     .history_content {
       gap: 12px;
       justify-content: flex-start;
-      overflow-x: scroll;
+      overflow-x: auto;
       padding: 0 24px;
+
+      &::-webkit-scrollbar {
+        display: block;
+        height: 12px;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 100px;
+        background: #bdbdbd;
+        margin: 0 24px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        width: 205px;
+        height: 12px;
+        border-radius: 100px;
+        background: $BACKGROUND_NEUTRAL;
+      }
 
       .history_contentBox {
         width: 327px;
         height: 423px;
+        margin-bottom: 13px;
       }
     }
   }

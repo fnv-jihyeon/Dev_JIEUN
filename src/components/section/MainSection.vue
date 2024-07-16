@@ -64,7 +64,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-family: 'Pretendard';
   white-space: nowrap;
 
   .main_title {

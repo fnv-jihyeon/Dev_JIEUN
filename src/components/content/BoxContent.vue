@@ -44,7 +44,6 @@ const props = defineProps({
   }
 
   .box_content_text {
-    font-family: 'Pretendard';
     color: $LABEL_NORMAL;
     display: flex;
     position: relative;

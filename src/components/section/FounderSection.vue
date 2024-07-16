@@ -61,7 +61,6 @@ const banner = {
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
-      font-family: 'Pretendard';
       color: $BACKGROUND_NORMAL;
 
       h4 {

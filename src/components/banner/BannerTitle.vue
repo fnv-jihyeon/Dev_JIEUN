@@ -38,7 +38,6 @@ const props = defineProps({
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  font-family: 'Pretendard';
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;

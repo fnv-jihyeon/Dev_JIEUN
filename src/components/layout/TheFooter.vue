@@ -36,7 +36,7 @@ watch(showModal, (newValue) => {
     <section>
       <div class="footer_content">
         <figure>
-          <img src="@/assets/images/finevo_logo_white.png" />
+          <img src="@/assets/images/finevo_logo_white.svg" />
         </figure>
         <div class="footer_data bg_normal">
           <span @click="openModal('privacy_policy')">개인정보 처리방침</span>
