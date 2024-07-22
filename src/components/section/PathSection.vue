@@ -49,7 +49,26 @@ const contents = [
           v-for="(content, index) in contents"
           :key="index"
         >
-          <div class="path_contentWrapper">
+          <a
+            v-if="content.image === 'location' || content.image === 'subway'"
+            :href="'https://map.naver.com/p/search/%ED%94%BC%EB%84%A4%EB%B3%B4/place/1589230044?c=15.00,0,0,0,dh&isCorrectAnswer=true'"
+            target="_blank"
+          >
+            <div class="path_contentWrapper">
+              <img
+                :src="require(`@/assets/images/${content.image}.svg`)"
+                :alt="content.title"
+              />
+              <div class="path_contentText">
+                <h2>{{ content.title }}</h2>
+                <p>
+                  <span>{{ content.description1 }}</span>
+                  <span>{{ content.description2 }}</span>
+                </p>
+              </div>
+            </div>
+          </a>
+          <div v-else class="path_contentWrapper">
             <img
               :src="require(`@/assets/images/${content.image}.svg`)"
               :alt="content.title"

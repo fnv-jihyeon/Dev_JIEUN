@@ -36,10 +36,13 @@ const bannerContents = [
 <template>
   <section class="branding_container">
     <div class="branding_title">
-      <h1>피네보 크루는 이렇게 일합니다.</h1>
+      <h1>
+        <span class="branding_title_blue">Imageers </span>
+        <span>Freely Professional</span>
+      </h1>
       <p>
-        동료가 가장 큰 복지라는 말처럼 피네보 임직원은 서로에게 <br />
-        좋은 에너지를 주기 위해 노력합니다.
+        <span>꿈꾸는 대로 일하고 프로다운 결과를 만드는 사람들이</span>
+        <span> 모여 피네보의 성과를 만들어갑니다. </span>
       </p>
     </div>
     <div class="branding_content">
@@ -58,12 +61,12 @@ const bannerContents = [
 .branding_container {
   width: 100%;
   height: 1080px;
-  padding: 220px 0 88px;
+  padding: 139px 0 0;
   background: #ffffff;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  gap: 46px;
+  gap: 98px;
 
   .branding_title {
     width: 100%;
@@ -76,8 +79,12 @@ const bannerContents = [
     white-space: nowrap;
 
     h1 {
-      @extend .title2;
-      line-height: 41.6px;
+      @extend .display2;
+      line-height: 62.4px;
+
+      .branding_title_blue {
+        @extend .blue_heavy;
+      }
     }
 
     p {
@@ -104,20 +111,28 @@ const bannerContents = [
 
 @media (max-width: 767px) {
   .branding_container {
-    height: 1046px;
-    padding: 161px 20px 57px 20px;
-    gap: 60px;
+    height: auto;
+    padding: 88px 20px 0;
+    gap: 62px;
 
     .branding_title {
+      gap: 10px;
       h1 {
-        font-size: 24px;
-        line-height: 28.64px;
+        font-weight: 800;
+        font-size: 28px;
+        line-height: 38px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       p {
         font-weight: 400;
         font-size: 14px;
         line-height: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
 

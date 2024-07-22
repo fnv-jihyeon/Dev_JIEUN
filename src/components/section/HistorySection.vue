@@ -148,7 +148,7 @@ const bannerContent = [
 
       .history_contentBox {
         width: 327px;
-        height: 423px;
+        min-width: 327px;
         margin-bottom: 13px;
       }
     }

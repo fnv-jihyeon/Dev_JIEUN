@@ -76,7 +76,6 @@ const props = defineProps({
     }
 
     .banner_content_word {
-      font-family: 'Pretendard';
       font-weight: 800;
       font-size: 50px;
       line-height: 50px;
