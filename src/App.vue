@@ -1,15 +1,18 @@
 <script setup>
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
 </script>
 
 <template>
   <div class="app_container">
-    <TheHeader />
+    <TheHeader v-if="route.name !== 'test'" />
     <div class="app_content">
       <router-view />
     </div>
-    <TheFooter />
+    <TheFooter v-if="route.name !== 'test'" />
   </div>
 </template>
 

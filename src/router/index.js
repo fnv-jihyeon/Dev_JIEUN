@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import AboutView from '@/views/AboutView.vue';
 import FinevoInView from '@/views/FinevoInView.vue';
+import TodoApp from '@/example/todo/TodoApp.vue';
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/finevo-in',
     name: 'finevo-in',
     component: FinevoInView,
+  },
+  {
+    path: '/test',
+    name: 'test',
+    component: TodoApp,
   },
 ];
 

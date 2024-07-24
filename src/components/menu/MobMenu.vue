@@ -16,7 +16,7 @@ const menuList = [
     ],
     isOpen: ref(false),
   },
-  {
+  /*{
     item: '서비스',
     path: '',
     isOpen: ref(false),
@@ -30,7 +30,7 @@ const menuList = [
     item: '고객지원',
     path: '',
     isOpen: ref(false),
-  },
+  },*/
   {
     item: 'Finevo In',
     path: '/finevo-in',
@@ -38,26 +38,17 @@ const menuList = [
   },
 ];
 
-const showAlert = () => {
-  alert('준비중입니다!');
-};
-
 const toggleMenu = (index) => {
   const currentMenu = menuList[index];
 
-  if (!currentMenu.itemList) {
-    if (!currentMenu.path) {
-      showAlert();
-    } else if (currentMenu.path) {
-      emit('close');
-    }
+  if (!currentMenu.itemList && currentMenu.path) {
+    emit('close');
   } else {
     menuList.forEach((menu, i) => {
       if (i !== index) {
         menu.isOpen.value = false;
       }
     });
-
     currentMenu.isOpen.value = !currentMenu.isOpen.value;
   }
 };
